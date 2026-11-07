@@ -1,0 +1,36 @@
+name: Shift-Left Usability Heuristic Lint
+
+on:
+  pull_request:
+    branches: [main, master, develop]
+  push:
+    branches: [main]
+
+jobs:
+  heuristic-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run Heuristic Lint Action
+        uses: ./heuristic-lint-action
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          target-path: 'src'
+          severity-threshold: '2'
+          generate-playwright: 'true'
+          output-spec-dir: 'e2e/heuristic-generated'
+
+      - name: Run Generated Playwright Affordance Tests
+        if: always()
+        run: |
+          if [ -d "e2e/heuristic-generated" ]; then
+            echo "Running Playwright verification on staging environment..."
+            npx playwright test e2e/heuristic-generated/
+          fi

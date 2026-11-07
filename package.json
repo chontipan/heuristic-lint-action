@@ -1,0 +1,36 @@
+{
+  "name": "heuristic-lint-action",
+  "version": "1.0.0",
+  "description": "Shift-left Nielsen heuristic static linting and Playwright test generation for CI/CD pipelines",
+  "main": "dist/index.js",
+  "bin": {
+    "heuristic-lint": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "ts-node src/index.ts",
+    "test": "node dist/index.js --path=./test-fixtures"
+  },
+  "keywords": [
+    "heuristic-evaluation",
+    "usability",
+    "shift-left",
+    "github-action",
+    "static-analysis",
+    "playwright",
+    "hci"
+  ],
+  "author": "Chontipan et al. (University of Phayao)",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.0",
+    "chalk": "^4.1.2",
+    "commander": "^12.1.0",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "ts-node": "^10.9.2"
+  }
+}

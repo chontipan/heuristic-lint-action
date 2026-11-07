@@ -1,0 +1,30 @@
+name: 'Heuristic Lint Action'
+description: 'Automated Shift-Left Usability Heuristic Linter and Playwright Spec Generator for React/TypeScript PRs'
+author: 'Chontipan et al.'
+inputs:
+  github-token:
+    description: 'GitHub token for commenting on pull requests'
+    required: false
+    default: ${{ github.token }}
+  target-path:
+    description: 'Directory path or glob pattern of source code to analyze'
+    required: false
+    default: 'src'
+  severity-threshold:
+    description: 'Minimum severity level to trigger PR warning (0: Cosmetic, 1: Minor, 2: Medium, 3: Major, 4: Catastrophic)'
+    required: false
+    default: '2'
+  generate-playwright:
+    description: 'Whether to generate Playwright end-to-end DOM affordance test specs'
+    required: false
+    default: 'true'
+  output-spec-dir:
+    description: 'Directory to output generated Playwright specs'
+    required: false
+    default: 'e2e/heuristic-generated'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
+branding:
+  icon: 'check-circle'
+  color: 'blue'
