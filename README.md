@@ -107,22 +107,6 @@ node dist/index.js --path=/path/to/your/react-project/src --severity=2 --playwri
 
 ---
 
-## 📖 Citation
-
-If you use `heuristic-lint-action` in your research or engineering workflows, please cite our empirical study:
-
-```bibtex
-@article{chontipan2026whitebox,
-  title={White-Box LLM Agents Versus Human Evaluators: Shift-Left Usability Heuristic Evaluation on a Bilingual E-Government Platform},
-  author={Chontipan and Co-Author},
-  journal={International Journal of Engineering Trends and Technology},
-  year={2026},
-  publisher={Seventh Sense Research Group (SSRG)}
-}
-```
-
----
-
 ## 📄 License
 
 MIT License © 2026 Chontipan et al., School of Information and Communication Technology, University of Phayao.
