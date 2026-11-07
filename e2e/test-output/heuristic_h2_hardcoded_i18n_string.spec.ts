@@ -4,16 +4,16 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Heuristic Validation: H2: Match Between System and Real World', () => {
 
-  test('Verify Hardcoded Raw English String Bypassing i18n Translation (SampleWastePurchasePanel.tsx:20)', async ({ page }) => {
+  test('Verify Hardcoded Raw English String Bypassing i18n Translation (CheckoutOrderForm.tsx:23)', async ({ page }) => {
     // Defect ID: HL-H2-1 | Severity: 2/4
-    // Description: Literal string "Download" is hardcoded in JSX markup rather than referencing the localization dictionary (locales/th.ts), causing language desynchronization in bilingual municipal views.
+    // Description: Literal string "Checkout" is hardcoded in JSX markup rather than referencing the localization dictionary (locales/th.ts), causing language desynchronization in bilingual municipal views.
     await page.goto('/');
 
     await page.click('[data-testid="lang-switch-th"]');
-await expect(page.locator('text="Download"')).toHaveCount(0);
+await expect(page.locator('text="Checkout"')).toHaveCount(0);
   });
 
-  test('Verify Hardcoded Raw English String Bypassing i18n Translation (SampleWastePurchasePanel.tsx:30)', async ({ page }) => {
+  test('Verify Hardcoded Raw English String Bypassing i18n Translation (CheckoutOrderForm.tsx:35)', async ({ page }) => {
     // Defect ID: HL-H2-2 | Severity: 2/4
     // Description: Literal string "Delete" is hardcoded in JSX markup rather than referencing the localization dictionary (locales/th.ts), causing language desynchronization in bilingual municipal views.
     await page.goto('/');

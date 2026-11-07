@@ -4,7 +4,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Heuristic Validation: H5: Error Prevention', () => {
 
-  test('Verify Numeric Input Missing HTML min Attribute (Zod Disconnect) (SampleWastePurchasePanel.tsx:23)', async ({ page }) => {
+  test('Verify Numeric Input Missing HTML min Attribute (Zod Disconnect) (CheckoutOrderForm.tsx:27)', async ({ page }) => {
     // Defect ID: HL-H5-1 | Severity: 3/4
     // Description: Numeric input field omits HTML attribute min={0}. While backend Zod DTO schemas prevent negative database writes, the client-side DOM affordance permits negative character entry (-), failing shift-left error prevention.
     await page.goto('/');

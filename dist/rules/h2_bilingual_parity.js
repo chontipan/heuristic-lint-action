@@ -44,7 +44,7 @@ function checkBilingualParity(sourceFile, filePath) {
         // Check JSX text containing raw hardcoded English words that should use t('key')
         if (ts.isJsxText(node)) {
             const text = node.getText(sourceFile).trim();
-            const rawEnglishPattern = /^(Submit|Cancel|Save|Delete|Download|Export|Member|Total|Search|Edit|Role|Status)$/i;
+            const rawEnglishPattern = /^(Submit|Cancel|Save|Delete|Download|Export|Member|Total|Search|Edit|Role|Status|Checkout|Cart|Pay|Order)$/i;
             if (rawEnglishPattern.test(text)) {
                 const { line } = sourceFile.getLineAndCharacterOfPosition(node.getStart());
                 defects.push({
