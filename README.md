@@ -4,6 +4,7 @@
 > Operationalizing the **Three-Stage Triangulation Architecture** from the research paper:  
 > *"White-Box LLM Agents Versus Human Evaluators: Shift-Left Usability Heuristic Evaluation on a Bilingual E-Government Platform"*
 
+[![CI](https://github.com/chontipan/heuristic-lint-action/actions/workflows/ci.yml/badge.svg)](https://github.com/chontipan/heuristic-lint-action/actions/workflows/ci.yml)
 [![GitHub Action](https://img.shields.io/badge/GitHub%20Action-v1.0-blue.svg)](https://github.com/chontipan/heuristic-lint-action)
 [![Nielsen Heuristics](https://img.shields.io/badge/Heuristics-Nielsen%2010-orange.svg)](https://www.nngroup.com/articles/ten-usability-heuristics/)
 [![Playwright](https://img.shields.io/badge/Playwright-E2E%20Synthesis-green.svg)](https://playwright.dev/)
