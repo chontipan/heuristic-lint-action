@@ -50,7 +50,13 @@ function scanDirectory(dir, fileList = []) {
                 scanDirectory(fullPath, fileList);
             }
         }
-        else if (entry.isFile() && (entry.name.endsWith('.ts') || entry.name.endsWith('.tsx'))) {
+        else if (entry.isFile() &&
+            (entry.name.endsWith('.ts') || entry.name.endsWith('.tsx')) &&
+            !entry.name.endsWith('.d.ts') &&
+            !entry.name.endsWith('.spec.ts') &&
+            !entry.name.endsWith('.spec.tsx') &&
+            !entry.name.endsWith('.test.ts') &&
+            !entry.name.endsWith('.test.tsx')) {
             fileList.push(fullPath);
         }
     }

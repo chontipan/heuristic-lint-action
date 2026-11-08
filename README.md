@@ -80,6 +80,14 @@ jobs:
           output-spec-dir: 'e2e/heuristic-generated'
 ```
 
+#### Action Outputs
+
+| Output | Description |
+| :--- | :--- |
+| `total-defects` | Total number of detected actionable heuristic defects |
+| `critical-defects` | Number of major/catastrophic defects (Severity >= 3) |
+| `generated-specs-count` | Number of Playwright test specifications generated |
+
 ### 2. Local CLI Usage
 
 You can also run the tool locally via npx or npm:

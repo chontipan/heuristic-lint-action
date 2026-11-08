@@ -62,6 +62,10 @@ async function runAction() {
                 report.generatedPlaywrightSpecs = specs;
             }
             (0, console_report_1.printConsoleReport)(report);
+            // Set GitHub Action outputs
+            core.setOutput('total-defects', report.totalDefects);
+            core.setOutput('critical-defects', (report.defectsBySeverity[3] || 0) + (report.defectsBySeverity[4] || 0));
+            core.setOutput('generated-specs-count', report.generatedPlaywrightSpecs?.length || 0);
             // Post PR comment if running in PR context
             if (token && github.context.payload.pull_request) {
                 const octokit = github.getOctokit(token);
@@ -90,7 +94,7 @@ async function runAction() {
         program
             .name('heuristic-lint')
             .description('CLI tool for Shift-Left Usability Heuristic Static Linting and Playwright Test Generation')
-            .version('1.0.0')
+            .version('1.0.3')
             .option('-p, --path <path>', 'Target directory to analyze', './src')
             .option('-s, --severity <level>', 'Minimum severity threshold (0-4)', '2')
             .option('--playwright', 'Generate Playwright specs for detected defects', true)

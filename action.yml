@@ -22,6 +22,13 @@ inputs:
     description: 'Directory to output generated Playwright specs'
     required: false
     default: 'e2e/heuristic-generated'
+outputs:
+  total-defects:
+    description: 'Total number of detected actionable heuristic defects'
+  critical-defects:
+    description: 'Number of major/catastrophic defects (Severity >= 3)'
+  generated-specs-count:
+    description: 'Number of Playwright test specifications generated'
 runs:
   using: 'node20'
   main: 'dist/index.js'

@@ -1,6 +1,6 @@
 {
   "name": "heuristic-lint-action",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Shift-left Nielsen heuristic static linting and Playwright test generation for CI/CD pipelines",
   "main": "dist/index.js",
   "bin": {
